@@ -1,0 +1,189 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Calibri, sans-serif;
+}
+
+/* ---------------- Navbar ---------------- */
+.navigation {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(21, 18, 105);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.leftnav {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rightnav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.rightnav a {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.rightnav a:hover {
+  transform: scale(1.1);
+}
+
+#languageselect {
+  height: 32px;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+/* ---------------- Hero Section ---------------- */
+.hero {
+  background: url("/images/sih_dashboard.png") center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* align to left */
+  padding-left: 8%; /* space from left edge */
+  padding-right: 8%;
+  color: rgb(21, 18, 105);
+  margin-top: 70px; /* offset for fixed navbar */
+}
+
+.hero-content {
+  max-width: 600px;
+  text-align: left; /* ✅ left-align text */
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* ---------------- Buttons ---------------- */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* ✅ align left */
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 180px;
+  color: #fff;               /* ✅ visible text */
+}
+
+/* Variants */
+.btn-student {
+  background-color: rgb(37, 150, 190);
+}
+
+.btn-teacher {
+  background-color: red;
+}
+
+/* Hover effects */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* ---------------- Footer ---------------- */
+.footer_panel4 {
+  background-color: #151269;
+  color: #dddddd;
+  text-align: center;
+  font-size: 14px;
+  padding: 15px 0;      /* slightly more breathing space */
+  margin: 0;            /* remove any external gaps */
+}
+
+.footer_panel4 .pages {
+  margin-bottom: 5px;   /* space between links and copyright */
+}
+
+.footer_panel4 a {
+  color: #dddddd;
+  margin: 0 8px;        /* equal space on both sides */
+  text-decoration: none;
+}
+
+.footer_panel4 a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 992px) {
+  .navigation {
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+  }
+
+  .rightnav {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
