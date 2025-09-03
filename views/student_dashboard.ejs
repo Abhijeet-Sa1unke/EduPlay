@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Smart Learning Platform</title>
+    <link rel="stylesheet" href="/styles/stud_dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">📚 EduPlay</div>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="#">Subjects</a></li>
+                    <li><a href="#">Rewards</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+                <div class="nav-utils">
+                    <select class="language-selector">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="mr">Marathi</option>
+                        <option value="te">Telgu</option>
+                        <option value="ta">Tamil</option>
+                    </select>
+                    <div class="offline-indicator" id="offlineStatus">
+                        <div class="status-dot"></div>
+                        <span>Offline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero fade-in">
+            <div class="welcome-section">
+                <div class="avatar">👨‍🎓</div>
+                <div class="welcome-text">
+                    <h1>Welcome back, Student!</h1>
+                    <p>Ready to continue your learning journey?</p>
+                </div>
+            </div>
+
+            <!-- Subject Tiles -->
+            <div class="subjects-grid">
+                <div class="subject-tile math slide-in" onclick="openSubject('math')">
+                    <div class="subject-icon">🧮</div>
+                    <h3>Mathematics</h3>
+                    <div class="progress-ring" style="--progress: 75">
+                        <svg>
+                            <circle class="bg" cx="40" cy="40" r="30"></circle>
+                            <circle class="progress" cx="40" cy="40" r="30"></circle>
+                        </svg>
+                        <div class="progress-text">75%</div>
+                    </div>
+                    <p>Continue Algebra</p>
+                </div>
+
+                <div class="subject-tile science slide-in" onclick="openSubject('science')" style="animation-delay: 0.1s">
+                    <div class="subject-icon">🔬</div>
+                    <h3>Science</h3>
+                    <div class="progress-ring" style="--progress: 60">
+                        <svg>
+                            <circle class="bg" cx="40" cy="40" r="30"></circle>
+                            <circle class="progress" cx="40" cy="40" r="30"></circle>
+                        </svg>
+                        <div class="progress-text">60%</div>
+                    </div>
+                    <p>Physics Chapter 5</p>
+                </div>
+
+                <div class="subject-tile technology slide-in" onclick="openSubject('technology')" style="animation-delay: 0.2s">
+                    <div class="subject-icon">💻</div>
+                    <h3>Technology</h3>
+                    <div class="progress-ring" style="--progress: 85">
+                        <svg>
+                            <circle class="bg" cx="40" cy="40" r="30"></circle>
+                            <circle class="progress" cx="40" cy="40" r="30"></circle>
+                        </svg>
+                        <div class="progress-text">85%</div>
+                    </div>
+                    <p>Web Development</p>
+                </div>
+
+                <div class="subject-tile challenge slide-in" onclick="openDailyChallenge()" style="animation-delay: 0.3s">
+                    <div class="subject-icon">🏆</div>
+                    <h3>Daily Challenge</h3>
+                    <div class="progress-ring" style="--progress: 40">
+                        <svg>
+                            <circle class="bg" cx="40" cy="40" r="30"></circle>
+                            <circle class="progress" cx="40" cy="40" r="30"></circle>
+                        </svg>
+                        <div class="progress-text">2/5</div>
+                    </div>
+                    <p>Logic Puzzle</p>
+                </div>
+            </div>
+
+            <button class="start-button" onclick="startLearning()">🚀 Start Learning</button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>💡Tips for Students</h3>
+                    <ul class="tips-list">
+                        <li>Set daily learning goals</li>
+                        <li>Take regular breaks</li>
+                        <li>Practice consistently</li>
+                        <li>Ask questions when stuck</li>
+                        <li>Review previous lessons</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#" onclick="openParentView()">👨‍👩‍👧‍👦 Parent View</a>
+                        <a href="#" onclick="contactSupport()">💬 Contact Support</a>
+                        <a href="#" onclick="showHelp()">❓ Help Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <!--<script src="stud_dashboard.js"></script>--> 
+</body>
+</html>
