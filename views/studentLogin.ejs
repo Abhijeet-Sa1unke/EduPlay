@@ -2,56 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Login</title>
-  <link rel="stylesheet" href="/styles/logincard_css.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="styles/logincard_css.css" />
 </head>
 <body>
   <div class="main_card">
     <div class="card">
+      <!-- Left side image -->
       <div class="image">
-        <img src="/images/student-login.png" alt="login" />
+        <img src="/images/student-login.png" alt="Login Banner">
       </div>
 
+      <!-- Right side form -->
       <div class="rightside">
-        <h1>Student Login</h1>
-        <p class="signup-text">Not a member yet? <a href="#">Sign Up!</a></p>
 
-        <div class="input-group">
-          <label for="username"><i class="fa-solid fa-user"></i> Username or E-mail</label>
-          <input type="text" id="username" />
-        </div>
+        <!-- Login Form -->
+        <form id="loginForm" action="/login" method="POST">
+  <h1>Student Login</h1>
 
-        <div class="input-group">
-          <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
-          <input type="password" id="password" />
-        </div>
+  <!-- Error message block -->
+<% if (error && error.length > 0) { %>
+  <div class="alert error">
+    <%= error[0] %>
+  </div>
+<% } %>
 
-        <div class="extraopt">
-          <div class="rem">
-            <input type="checkbox" id="remember" />
-            <label for="remember">Remember Me</label>
-          </div>
-          <div class="forgot">
-            <a href="#">Forgot Password?</a>
-          </div>
-        </div>
+<% if (success && success.length > 0) { %>
+  <div class="alert success">
+    <%= success[0] %>
+  </div>
+<% } %>
 
-        <button class="primary-btn">Log In</button>
-        <p class="divider">or</p>
 
-        <div class="social-buttons">
-  <button id="googleb">
-    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_ios_64dp.png" alt="Google Logo"> Google
-  </button>
-  <button id="fbb">
-    <i class="fa-brands fa-facebook-f"></i> Facebook
-  </button>
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+  </div>
+
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+  </div>
+
+  <div class="extraopt">
+    <label><input type="checkbox" /> Remember me</label>
+    <a href="#">Forgot Password?</a>
+  </div>
+
+  <button type="submit" class="primary-btn">Log In</button>
+
+  <p class="divider">or</p>
+
+  <div class="social-buttons">
+  <a id="googleb" class="btn" href="/auth/google">
+    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google"/> Google
+  </a>
+  <a id="fbb" class="btn" href="/auth/facebook">Facebook</a>
 </div>
+
+
+  <p class="signup-text">
+    Not a member yet? <a href="#" onclick="toggleForms('signup')">Sign Up!</a>
+  </p>
+</form>
+
+
+        <!-- Signup Form -->
+        <form id="signupForm" action="/signup" method="POST" style="display:none;">
+  <h1>Student Signup</h1>
+
+  <div class="input-group">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+  </div>
+
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+  </div>
+
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Create password" required />
+  </div>
+
+  <button type="submit" class="primary-btn">Sign Up</button>
+
+  <p class="signup-text">
+    Already have an account? <a href="#" onclick="toggleForms('login')">Log In</a>
+  </p>
+</form>
 
       </div>
     </div>
   </div>
+
+  <script>
+    function toggleForms(form) {
+      if (form === "signup") {
+        document.getElementById("signupForm").style.display = "block";
+        document.getElementById("loginForm").style.display = "none";
+      } else {
+        document.getElementById("signupForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>

@@ -72,10 +72,6 @@ body {
   color: #555;
 }
 
-.input-group i {
-  margin-right: 8px;
-}
-
 .input-group input {
   height: 40px;
   padding: 0 12px;
@@ -103,9 +99,9 @@ body {
   color: #151269;
 }
 
-/* Make "or" centered with lines on both sides */
+/* Divider line with text */
 .divider {
-  display: flex;              /* turn the <p> into a flex container */
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -114,7 +110,7 @@ body {
   font-size: 14px;
   line-height: 1;
   width: 100%;
-  max-width: 300px;           /* match the Login button width */
+  max-width: 300px;
 }
 
 .divider::before,
@@ -122,15 +118,15 @@ body {
   content: "";
   flex: 1;
   border-top: 1px solid #e0e0e0;
-  transform: translateY(0);   /* keep lines aligned with text baseline */
 }
 
 /* ---------------- Primary Button ---------------- */
 .primary-btn {
   height: 45px;
+  width: 100%;        /* ✅ ensure full width */
   border: none;
   border-radius: 30px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* ✨ smoother gradient */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
   font-size: 16px;
   font-weight: 600;
@@ -192,4 +188,41 @@ body {
 #fbb:hover {
   background: #0d65d9;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .image {
+    display: none; /* hide left image on small screens */
+  }
+
+  .rightside {
+    padding: 1.5rem;
+  }
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.alert.error {
+  background: #ffe0e0;
+  color: #b30000;
+  border: 1px solid #ff9999;
+}
+
+.alert.success {
+  background: #e0ffe5;
+  color: #007a33;
+  border: 1px solid #99ffb3;
 }
