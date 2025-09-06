@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard - Smart Learning Platform</title>
+    <title>EduPlay-Student Dashboard</title>
     <link rel="stylesheet" href="/styles/stud_dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">📚 EduPlay</div>
-                <ul class="nav-menu">
-                    <li><a href="#" class="active">Dashboard</a></li>
-                    <li><a href="#">Subjects</a></li>
-                    <li><a href="#">Rewards</a></li>
-                    <li><a href="#">Profile</a></li>
-                </ul>
-                <div class="nav-utils">
-                    <select class="language-selector">
-                        <option value="en">English</option>
-                        <option value="hi">Hindi</option>
-                        <option value="mr">Marathi</option>
-                        <option value="te">Telgu</option>
-                        <option value="ta">Tamil</option>
-                    </select>
-                    <div class="offline-indicator" id="offlineStatus">
-                        <div class="status-dot"></div>
-                        <span>Offline</span>
-                    </div>
+        <div class="container nav-content">
+            <div class="logo">
+                <i class="fa-solid fa-atom"></i>
+                EduPlay
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Subjects</a></li>
+                <li><a href="#">Rewards</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+            <div class="nav-utils">
+                <select class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="mr">Marathi</option>
+                    <option value="te">Telgu</option>
+                    <option value="ta">Tamil</option>
+                </select>
+                <div class="offline-indicator" id="offlineStatus">
+                    <div class="status-dot"></div>
+                    <span>Offline</span>
                 </div>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <!-- Hero Section -->
-        <section class="hero fade-in">
+        <section class="hero">
             <div class="welcome-section">
                 <div class="avatar">👨‍🎓</div>
                 <div class="welcome-text">
@@ -46,10 +50,9 @@
                 </div>
             </div>
 
-            <!-- Subject Tiles -->
             <div class="subjects-grid">
-                <div class="subject-tile math slide-in" onclick="openSubject('math')">
-                    <div class="subject-icon">🧮</div>
+                <div class="subject-tile math">
+                    <div class="subject-icon">➕</div>
                     <h3>Mathematics</h3>
                     <div class="progress-ring" style="--progress: 75">
                         <svg>
@@ -61,7 +64,7 @@
                     <p>Continue Algebra</p>
                 </div>
 
-                <div class="subject-tile science slide-in" onclick="openSubject('science')" style="animation-delay: 0.1s">
+                <div class="subject-tile science">
                     <div class="subject-icon">🔬</div>
                     <h3>Science</h3>
                     <div class="progress-ring" style="--progress: 60">
@@ -74,7 +77,7 @@
                     <p>Physics Chapter 5</p>
                 </div>
 
-                <div class="subject-tile technology slide-in" onclick="openSubject('technology')" style="animation-delay: 0.2s">
+                <div class="subject-tile technology">
                     <div class="subject-icon">💻</div>
                     <h3>Technology</h3>
                     <div class="progress-ring" style="--progress: 85">
@@ -87,7 +90,7 @@
                     <p>Web Development</p>
                 </div>
 
-                <div class="subject-tile challenge slide-in" onclick="openDailyChallenge()" style="animation-delay: 0.3s">
+                <div class="subject-tile challenge">
                     <div class="subject-icon">🏆</div>
                     <h3>Daily Challenge</h3>
                     <div class="progress-ring" style="--progress: 40">
@@ -101,36 +104,31 @@
                 </div>
             </div>
 
-            <button class="start-button" onclick="startLearning()">🚀 Start Learning</button>
+            <button class="start-button">🚀 Start Learning</button>
         </section>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>💡Tips for Students</h3>
-                    <ul class="tips-list">
-                        <li>Set daily learning goals</li>
-                        <li>Take regular breaks</li>
-                        <li>Practice consistently</li>
-                        <li>Ask questions when stuck</li>
-                        <li>Review previous lessons</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <div class="footer-links">
-                        <a href="#" onclick="openParentView()">👨‍👩‍👧‍👦 Parent View</a>
-                        <a href="#" onclick="contactSupport()">💬 Contact Support</a>
-                        <a href="#" onclick="showHelp()">❓ Help Center</a>
-                    </div>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>💡Tips for Students</h3>
+                <ul class="tips-list">
+                    <li>Set daily learning goals</li>
+                    <li>Take regular breaks</li>
+                    <li>Practice consistently</li>
+                    <li>Ask questions when stuck</li>
+                    <li>Review previous lessons</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#">👨‍👩‍👧‍👦 Parent View</a>
+                    <a href="#">💬 Contact Support</a>
+                    <a href="#">❓ Help Center</a>
                 </div>
             </div>
         </div>
     </footer>
-
-   <!--<script src="stud_dashboard.js"></script>--> 
 </body>
 </html>
